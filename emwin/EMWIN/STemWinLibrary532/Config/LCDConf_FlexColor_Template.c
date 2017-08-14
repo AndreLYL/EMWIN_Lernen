@@ -71,8 +71,8 @@ Purpose     : Display controller configuration (single layer)
 
 
 
-#define VXSIZE_PHYS	320 
-#define VYSIZE_PHYS 240
+#define VXSIZE_PHYS	240 
+#define VYSIZE_PHYS 320
 
 
 

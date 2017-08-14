@@ -234,23 +234,8 @@ static void _XorPixel(GUI_DEVICE * pDevice, int x, int y) {
 *       _FillRect
 */
 static void _FillRect(GUI_DEVICE * pDevice, int x0, int y0, int x1, int y1) {
-  LCD_PIXELINDEX PixelIndex;
-  int x;
+	LCD_Fill(x0,y0,x1,y1,LCD_COLORINDEX);										//用STM32的自带填充函数
 
-  PixelIndex = LCD__GetColorIndex();
-  if (GUI_pContext->DrawMode & LCD_DRAWMODE_XOR) {
-    for (; y0 <= y1; y0++) {
-      for (x = x0; x <= x1; x++) {
-        _XorPixel(pDevice, x, y0);
-      }
-    }
-  } else {
-    for (; y0 <= y1; y0++) {
-      for (x = x0; x <= x1; x++) {
-        _SetPixelIndex(pDevice, x, y0, PixelIndex);
-      }
-    }
-  }
 }
 
 /*********************************************************************
