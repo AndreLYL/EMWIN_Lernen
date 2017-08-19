@@ -59,7 +59,7 @@
 "..\obj\guidemo_vscreen.o"
 "..\obj\guidemo_washingmachine.o"
 "..\obj\guidemo_zoomandrotate.o"
---strict --scatter "..\OBJ\MALLOC.sct"
+--strict --scatter "..\OBJ\STM32F4_Emwin.sct"
 --summary_stderr --info summarysizes --map --xref --callgraph --symbols
 --info sizes --info totals --info unused --info veneers
---list "..\OBJ\MALLOC.map" -o ..\OBJ\MALLOC.axf
+--list "..\OBJ\STM32F4_Emwin.map" -o ..\OBJ\STM32F4_Emwin.axf
