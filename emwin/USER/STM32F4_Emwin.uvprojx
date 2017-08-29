@@ -7,7 +7,7 @@
 
   <Targets>
     <Target>
-      <TargetName>MALLOC</TargetName>
+      <TargetName>STM32F4_Emwin</TargetName>
       <ToolsetNumber>0x4</ToolsetNumber>
       <ToolsetName>ARM-ADS</ToolsetName>
       <pCCUsed>5060422::V5.06 update 4 (build 422)::ARMCC</pCCUsed>
@@ -48,7 +48,7 @@
             <InvalidFlash>1</InvalidFlash>
           </TargetStatus>
           <OutputDirectory>..\OBJ\</OutputDirectory>
-          <OutputName>MALLOC</OutputName>
+          <OutputName>STM32F4_Emwin</OutputName>
           <CreateExecutable>1</CreateExecutable>
           <CreateLib>0</CreateLib>
           <CreateHexFile>1</CreateHexFile>
@@ -136,7 +136,7 @@
             <DriverSelection>4099</DriverSelection>
           </Flash1>
           <bUseTDR>1</bUseTDR>
-          <Flash2>Segger\JL2CM3.dll</Flash2>
+          <Flash2>BIN\UL2CM3.DLL</Flash2>
           <Flash3>"" ()</Flash3>
           <Flash4></Flash4>
           <pFcarmOut></pFcarmOut>
@@ -335,7 +335,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F40_41xxx,USE_STDPERIPH_DRIVER,__FPU_PRESENT = 1,__FPU_USED=1,ARM_MATH_CM4,__CC_ARM</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\HARDWARE\LED;..\HARDWARE\LCD;..\HARDWARE\KEY;..\HARDWARE\SRAM;..\MALLOC;..\FWLIB\inc;..\FWLIB\src;..\EMWIN\STemWinLibrary532\inc;..\EMWIN\STemWinLibrary532\Config;..\HARDWARE\TOUCH;..\HARDWARE\IIC;..\HARDWARE\24CXX;..\HARDWARE\TIMER;..\EMWIN\Demo</IncludePath>
+              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\HARDWARE\LED;..\HARDWARE\LCD;..\HARDWARE\KEY;..\HARDWARE\SRAM;..\MALLOC;..\FWLIB\inc;..\FWLIB\src;..\EMWIN\STemWinLibrary532\inc;..\EMWIN\STemWinLibrary532\Config;..\HARDWARE\TOUCH;..\HARDWARE\IIC;..\HARDWARE\24CXX;..\HARDWARE\TIMER;..\EMWIN\Demo;..\UCOSII\CONFIG;..\UCOSII\CORE;..\UCOSII\PORT</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -570,11 +570,6 @@
           <GroupName>EMWIN_Config</GroupName>
           <Files>
             <File>
-              <FileName>GUI_X.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>..\EMWIN\STemWinLibrary532\OS\GUI_X.c</FilePath>
-            </File>
-            <File>
               <FileName>GUIConf.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\EMWIN\STemWinLibrary532\Config\GUIConf.c</FilePath>
@@ -594,15 +589,20 @@
               <FileType>1</FileType>
               <FilePath>..\EMWIN\STemWinLibrary532\Config\GUI_X_Touch_Analog.c</FilePath>
             </File>
+            <File>
+              <FileName>GUI_X_UCOSII.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\EMWIN\STemWinLibrary532\OS\GUI_X_UCOSII.c</FilePath>
+            </File>
           </Files>
         </Group>
         <Group>
           <GroupName>EMWIN_Lib</GroupName>
           <Files>
             <File>
-              <FileName>STemWin532_CM4_Keil.lib</FileName>
+              <FileName>STemWin532_CM4_OS_Keil.lib</FileName>
               <FileType>4</FileType>
-              <FilePath>..\EMWIN\STemWinLibrary532\Lib\STemWin532_CM4_Keil.lib</FilePath>
+              <FilePath>..\EMWIN\STemWinLibrary532\Lib\STemWin532_CM4_OS_Keil.lib</FilePath>
             </File>
           </Files>
         </Group>
@@ -748,6 +748,96 @@
               <FileName>readme.txt</FileName>
               <FileType>5</FileType>
               <FilePath>..\readme.txt</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UCOSII_CORE</GroupName>
+          <Files>
+            <File>
+              <FileName>os_core.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_core.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_flag.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_flag.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_mbox.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_mbox.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_mem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_mem.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_mutex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_mutex.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_q.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_q.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_sem.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_sem.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_task.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_task.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_time.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_time.c</FilePath>
+            </File>
+            <File>
+              <FileName>os_tmr.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\CORE\os_tmr.c</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UCOSII_CONFIG</GroupName>
+          <Files>
+            <File>
+              <FileName>includes.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UCOSII\CONFIG\includes.h</FilePath>
+            </File>
+            <File>
+              <FileName>os_cfg.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UCOSII\CONFIG\os_cfg.h</FilePath>
+            </File>
+          </Files>
+        </Group>
+        <Group>
+          <GroupName>UCOSII_PORT</GroupName>
+          <Files>
+            <File>
+              <FileName>os_cpu.h</FileName>
+              <FileType>5</FileType>
+              <FilePath>..\UCOSII\PORT\os_cpu.h</FilePath>
+            </File>
+            <File>
+              <FileName>os_cpu_a.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>..\UCOSII\PORT\os_cpu_a.asm</FilePath>
+            </File>
+            <File>
+              <FileName>os_cpu_c.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\UCOSII\PORT\os_cpu_c.c</FilePath>
             </File>
           </Files>
         </Group>

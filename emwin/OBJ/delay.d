@@ -36,3 +36,13 @@
 ..\obj\delay.o: ..\FWLIB\inc\stm32f4xx_dac.h
 ..\obj\delay.o: ..\FWLIB\inc\stm32f4xx_dcmi.h
 ..\obj\delay.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
+..\obj\delay.o: ..\UCOSII\CONFIG\includes.h
+..\obj\delay.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\delay.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\delay.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\delay.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\delay.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\delay.o: ..\UCOSII\CORE\ucos_ii.h
+..\obj\delay.o: ..\UCOSII\CONFIG\includes.h
+..\obj\delay.o: ..\UCOSII\CONFIG\os_cfg.h
+..\obj\delay.o: ..\UCOSII\PORT\os_cpu.h

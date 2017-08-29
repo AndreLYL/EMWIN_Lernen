@@ -38,11 +38,12 @@
 ..\obj\main.o: ..\SYSTEM\delay\delay.h
 ..\obj\main.o: ..\SYSTEM\usart\usart.h
 ..\obj\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\main.o: ..\HARDWARE\SRAM\sram.h
+..\obj\main.o: ..\MALLOC\malloc.h
 ..\obj\main.o: ..\HARDWARE\LCD\ILI93x.h
 ..\obj\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
 ..\obj\main.o: ..\HARDWARE\LED\led.h
-..\obj\main.o: ..\HARDWARE\SRAM\sram.h
-..\obj\main.o: ..\MALLOC\malloc.h
+..\obj\main.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\main.o: ..\HARDWARE\TOUCH\touch.h
 ..\obj\main.o: ..\HARDWARE\TOUCH\ott2001a.h
 ..\obj\main.o: ..\HARDWARE\TOUCH\gt9147.h
@@ -54,7 +55,6 @@
 ..\obj\main.o: ..\EMWIN\STemWinLibrary532\inc\LCD.h
 ..\obj\main.o: ..\EMWIN\STemWinLibrary532\inc\Global.h
 ..\obj\main.o: ..\EMWIN\STemWinLibrary532\inc\GUI_Version.h
-..\obj\main.o: ..\HARDWARE\TIMER\timer.h
 ..\obj\main.o: ..\EMWIN\Demo\GUIDemo.h
 ..\obj\main.o: ..\EMWIN\STemWinLibrary532\inc\WM.h
 ..\obj\main.o: ..\EMWIN\STemWinLibrary532\inc\WM_GUI.h
@@ -78,3 +78,11 @@
 ..\obj\main.o: ..\EMWIN\STemWinLibrary532\inc\ICONVIEW.h
 ..\obj\main.o: ..\EMWIN\STemWinLibrary532\inc\LISTVIEW.h
 ..\obj\main.o: ..\EMWIN\STemWinLibrary532\inc\TREEVIEW.h
+..\obj\main.o: ..\UCOSII\CONFIG\includes.h
+..\obj\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\main.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\main.o: ..\UCOSII\CORE\ucos_ii.h
+..\obj\main.o: ..\UCOSII\CONFIG\includes.h
+..\obj\main.o: ..\UCOSII\CONFIG\os_cfg.h
+..\obj\main.o: ..\UCOSII\PORT\os_cpu.h

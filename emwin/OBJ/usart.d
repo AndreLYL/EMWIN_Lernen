@@ -37,3 +37,12 @@
 ..\obj\usart.o: ..\FWLIB\inc\stm32f4xx_fsmc.h
 ..\obj\usart.o: ..\SYSTEM\usart\usart.h
 ..\obj\usart.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdio.h
+..\obj\usart.o: ..\UCOSII\CONFIG\includes.h
+..\obj\usart.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\string.h
+..\obj\usart.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\ctype.h
+..\obj\usart.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+..\obj\usart.o: D:\Software\Keil5\ARM\ARMCC\Bin\..\include\stdarg.h
+..\obj\usart.o: ..\UCOSII\CORE\ucos_ii.h
+..\obj\usart.o: ..\UCOSII\CONFIG\includes.h
+..\obj\usart.o: ..\UCOSII\CONFIG\os_cfg.h
+..\obj\usart.o: ..\UCOSII\PORT\os_cpu.h
