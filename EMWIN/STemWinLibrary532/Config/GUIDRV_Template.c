@@ -185,10 +185,7 @@ static void _SetPixelIndex(GUI_DEVICE * pDevice, int x, int y, int PixelIndex) {
 *   that no check on the parameters needs to be performed.
 */
 static unsigned int _GetPixelIndex(GUI_DEVICE * pDevice, int x, int y) {
-  unsigned int PixelIndex;
-    //
-    // Convert logical into physical coordinates (Dep. on LCDConf.h)
-    //
+	unsigned int PixelIndex;
     #if (LCD_MIRROR_X == 1) || (LCD_MIRROR_Y == 1) || (LCD_SWAP_XY == 1)
       int xPhys, yPhys;
 
@@ -202,18 +199,14 @@ static unsigned int _GetPixelIndex(GUI_DEVICE * pDevice, int x, int y) {
     GUI_USE_PARA(x);
     GUI_USE_PARA(y);
     {
-      //
-      // Write into hardware ... Adapt to your system
-		PixelIndex = LCD_ReadPoint(x,y);
-      // TBD by customer...
-      //
-      PixelIndex = 0;
+			PixelIndex = LCD_ReadPoint(x,y);
     }
     #if (LCD_MIRROR_X == 0) && (LCD_MIRROR_Y == 0) && (LCD_SWAP_XY == 0)
       #undef xPhys
       #undef yPhys
     #endif
   return PixelIndex;
+	
 }
 
 /*********************************************************************

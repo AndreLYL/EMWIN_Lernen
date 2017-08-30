@@ -70,7 +70,9 @@ ARM Macro Assembler    Page 2
 
 
                        Stack_Size
-                               EQU              0x00000800
+                               EQU              0x00000800  ;»Áπ˚ π”√STemWinµƒª
+                                                            ∞¥À÷µ”¶∏√…Ë÷√¥Û“ªµ„
+                                                            
    42 00000000         
    43 00000000                 AREA             STACK, NOINIT, READWRITE, ALIGN
 =3
@@ -126,14 +128,14 @@ ARM Macro Assembler    Page 2
    80 0000002C 00000000        DCD              SVC_Handler ; SVCall Handler
    81 00000030 00000000        DCD              DebugMon_Handler ; Debug Monito
                                                             r Handler
-   82 00000034 00000000        DCD              0           ; Reserved
-   83 00000038 00000000        DCD              PendSV_Handler ; PendSV Handler
 
 
 
 ARM Macro Assembler    Page 3 
 
 
+   82 00000034 00000000        DCD              0           ; Reserved
+   83 00000038 00000000        DCD              PendSV_Handler ; PendSV Handler
                                                             
    84 0000003C 00000000        DCD              SysTick_Handler 
                                                             ; SysTick Handler
@@ -191,14 +193,14 @@ ARM Macro Assembler    Page 3
                                                                  
   100 00000074 00000000        DCD              DMA1_Stream2_IRQHandler ; DMA1 
                                                             Stream 2           
-                                                                               
-                                                                 
 
 
 
 ARM Macro Assembler    Page 4 
 
 
+                                                                               
+                                                                 
   101 00000078 00000000        DCD              DMA1_Stream3_IRQHandler ; DMA1 
                                                             Stream 3           
                                                                                
@@ -256,14 +258,14 @@ ARM Macro Assembler    Page 4
                                                                                
                                                                             
   116 000000B4 00000000        DCD              TIM3_IRQHandler ; TIM3         
-                                                                               
-                                                                            
 
 
 
 ARM Macro Assembler    Page 5 
 
 
+                                                                               
+                                                                            
   117 000000B8 00000000        DCD              TIM4_IRQHandler ; TIM4         
                                                                                
                                                                             
@@ -321,14 +323,14 @@ ARM Macro Assembler    Page 5
                                                             ommutation and TIM1
                                                             4
   133 000000F8 00000000        DCD              TIM8_CC_IRQHandler ; TIM8 Captu
-                                                            re Compare         
-                                                                               
 
 
 
 ARM Macro Assembler    Page 6 
 
 
+                                                            re Compare         
+                                                                               
                                                                    
   134 000000FC 00000000        DCD              DMA1_Stream7_IRQHandler ; DMA1 
                                                             Stream7            
@@ -386,14 +388,14 @@ ARM Macro Assembler    Page 6
                                                              line              
                                                                     
   150 0000013C 00000000        DCD              CAN2_TX_IRQHandler ; CAN2 TX   
-                                                                               
-                                                                               
 
 
 
 ARM Macro Assembler    Page 7 
 
 
+                                                                               
+                                                                               
                                                                    
   151 00000140 00000000        DCD              CAN2_RX0_IRQHandler ; CAN2 RX0 
                                                                                
@@ -451,14 +453,14 @@ ARM Macro Assembler    Page 7
                                                                               
   165 00000178 00000000        DCD              DCMI_IRQHandler ; DCMI         
                                                                                
-                                                                            
-  166 0000017C 00000000        DCD              CRYP_IRQHandler ; CRYP crypto  
 
 
 
 ARM Macro Assembler    Page 8 
 
 
+                                                                            
+  166 0000017C 00000000        DCD              CRYP_IRQHandler ; CRYP crypto  
                                                                                
                                                                             
   167 00000180 00000000        DCD              HASH_RNG_IRQHandler 
@@ -516,14 +518,14 @@ K]
   208 00000010                 ENDP
   210 00000010         UsageFault_Handler
                                PROC
-  211 00000010                 EXPORT           UsageFault_Handler         [WEA
-K]
 
 
 
 ARM Macro Assembler    Page 9 
 
 
+  211 00000010                 EXPORT           UsageFault_Handler         [WEA
+K]
   212 00000010 E7FE            B                .
   213 00000012                 ENDP
   214 00000012         SVC_Handler
@@ -581,14 +583,14 @@ K]
   246 0000001A                 EXPORT           DMA1_Stream1_IRQHandler        
    [WEAK]
   247 0000001A                 EXPORT           DMA1_Stream2_IRQHandler        
-   [WEAK]
-  248 0000001A                 EXPORT           DMA1_Stream3_IRQHandler        
 
 
 
 ARM Macro Assembler    Page 10 
 
 
+   [WEAK]
+  248 0000001A                 EXPORT           DMA1_Stream3_IRQHandler        
    [WEAK]
   249 0000001A                 EXPORT           DMA1_Stream4_IRQHandler        
    [WEAK]
@@ -646,14 +648,14 @@ ARM Macro Assembler    Page 10
    [WEAK]
   276 0000001A                 EXPORT           OTG_FS_WKUP_IRQHandler         
    [WEAK]
-  277 0000001A                 EXPORT           TIM8_BRK_TIM12_IRQHandler      
-   [WEAK]
 
 
 
 ARM Macro Assembler    Page 11 
 
 
+  277 0000001A                 EXPORT           TIM8_BRK_TIM12_IRQHandler      
+   [WEAK]
   278 0000001A                 EXPORT           TIM8_UP_TIM13_IRQHandler       
    [WEAK]
   279 0000001A                 EXPORT           TIM8_TRG_COM_TIM14_IRQHandler  
@@ -711,14 +713,14 @@ ARM Macro Assembler    Page 11
   305 0000001A                 EXPORT           USART6_IRQHandler              
    [WEAK]
   306 0000001A                 EXPORT           I2C3_EV_IRQHandler             
-   [WEAK]
-  307 0000001A                 EXPORT           I2C3_ER_IRQHandler             
 
 
 
 ARM Macro Assembler    Page 12 
 
 
+   [WEAK]
+  307 0000001A                 EXPORT           I2C3_ER_IRQHandler             
    [WEAK]
   308 0000001A                 EXPORT           OTG_HS_EP1_OUT_IRQHandler      
    [WEAK]
@@ -776,14 +778,14 @@ ARM Macro Assembler    Page 12
   353 0000001A         SPI2_IRQHandler
   354 0000001A         USART1_IRQHandler
   355 0000001A         USART2_IRQHandler
-  356 0000001A         USART3_IRQHandler
-  357 0000001A         EXTI15_10_IRQHandler
 
 
 
 ARM Macro Assembler    Page 13 
 
 
+  356 0000001A         USART3_IRQHandler
+  357 0000001A         EXTI15_10_IRQHandler
   358 0000001A         RTC_Alarm_IRQHandler
   359 0000001A         OTG_FS_WKUP_IRQHandler
   360 0000001A         TIM8_BRK_TIM12_IRQHandler
@@ -841,14 +843,14 @@ ARM Macro Assembler    Page 13
   416 0000001C         
   417 0000001C                 IMPORT           __use_two_region_memory
   418 0000001C                 EXPORT           __user_initial_stackheap
-  419 0000001C         
-  420 0000001C         __user_initial_stackheap
 
 
 
 ARM Macro Assembler    Page 14 
 
 
+  419 0000001C         
+  420 0000001C         __user_initial_stackheap
   421 0000001C         
   422 0000001C 4804            LDR              R0, =  Heap_Mem
   423 0000001E 4905            LDR              R1, =(Stack_Mem + Stack_Size)
